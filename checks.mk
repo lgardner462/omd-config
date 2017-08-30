@@ -3,7 +3,7 @@ checks = [
 ( ['tcp'], "cpu.threads" , None, (5000,7000) ),
 ]
 
-# this should to in an eaps specfic file
+# this should to in an foo specfic file
 ignored_services += [
 
 # These are autofs mounts and we shouldn't monitor them
