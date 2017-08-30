@@ -1,22 +1,22 @@
 if type(define_hostgroups) != dict:
     define_hostgroups = {}
-define_hostgroups.update({'foo-basic': u'foo-basic',
- 'foo-critical': u'foo-critical',
- 'foo-critical-24x7': u'foo-critical-24x7',
+define_hostgroups.update({'tsstuff-basic': u'tsstuff-basic',
+ 'tsstuff-critical': u'tsstuff-critical',
+ 'tsstuff-critical-24x7': u'tsstuff-critical-24x7',
  'testhostgroup': u'testhostgroup',
- 'foo-printer': u'foo-printer',
+ 'tsstuff-printer': u'tsstuff-printer',
  'snmp': u'snmp'})
 
 if type(define_servicegroups) != dict:
     define_servicegroups = {}
-define_servicegroups.update({'foo-basic': u'foo-basic',
- 'foo-critical': u'foo-critical',
- 'foo-critical-24x7': u'foo-critical-24x7'})
+define_servicegroups.update({'tsstuff-basic': u'tsstuff-basic',
+ 'tsstuff-critical': u'tsstuff-critical',
+ 'tsstuff-critical-24x7': u'tsstuff-critical-24x7'})
 
 if type(define_contactgroups) != dict:
     define_contactgroups = {}
-define_contactgroups.update({'foo-admins': u'foo-admins',
- 'foo-pager': u'foo-pager',
- 'foo-ts': u'foots',})
+define_contactgroups.update({'tsstuff-admins': u'tsstuff-admins',
+ 'tsstuff-pager': u'tsstuff-pager',
+ 'tsstuff-ts': u'tsstuffts',})
 
 
