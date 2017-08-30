@@ -5,35 +5,35 @@
 extra_service_conf.setdefault('_ec_sl', [])
 
 extra_service_conf['_ec_sl'] = [
-  ( 10, ['tcp', ], ALL_HOSTS, ['Check_MK$'] ),
-  ( 10, ['eaps-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 20, ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 30, ['eaps-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 10, [], ALL_HOSTS, ['Check_MK$'] ),
+  ( 10, ['engaging-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 20, ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 30, ['engaging-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + extra_service_conf['_ec_sl']
 
 
-checkgroup_parameters.setdefault('printer_supply', [])
+active_checks.setdefault('icmp', [])
 
-checkgroup_parameters['printer_supply'] = [
-  ( (20.0, 10.0, False), [], ['color14.mit.edu'], ALL_SERVICES ),
-] + checkgroup_parameters['printer_supply']
+active_checks['icmp'] = [
+  ( {}, [], ALL_HOSTS ),
+] + active_checks['icmp']
 
 
 extra_host_conf.setdefault('check_interval', [])
 
 extra_host_conf['check_interval'] = [
-  ( 5, ['eaps-basic', ], ALL_HOSTS ),
-  ( 5, ['eaps-critical', ], ALL_HOSTS ),
-  ( 5, ['eaps-critical-24x7', ], ALL_HOSTS ),
+  ( 5, ['engaging-basic', ], ALL_HOSTS ),
+  ( 5, ['engaging-critical', ], ALL_HOSTS ),
+  ( 5, ['engaging-critical-24x7', ], ALL_HOSTS ),
 ] + extra_host_conf['check_interval']
 
 
 host_contactgroups = [
-  ( 'eaps-admins', ['eaps-basic', ], ALL_HOSTS ),
-  ( 'eaps-admins', ['eaps-critical', ], ALL_HOSTS ),
-  ( 'eaps-admins', ['eaps-critical-24x7', ], ALL_HOSTS ),
-  ( 'eaps-pager', ['eaps-critical', ], ALL_HOSTS ),
-  ( 'eaps-pager', ['eaps-critical-24x7', ], ALL_HOSTS ),
+  ( 'engaging-admins', ['engaging-basic', ], ALL_HOSTS ),
+  ( 'engaging-admins', ['engaging-critical', ], ALL_HOSTS ),
+  ( 'engaging-admins', ['engaging-critical-24x7', ], ALL_HOSTS ),
+  ( 'engaging-pager', ['engaging-critical', ], ALL_HOSTS ),
+  ( 'engaging-pager', ['engaging-critical-24x7', ], ALL_HOSTS ),
 ] + host_contactgroups
 
 
@@ -41,18 +41,18 @@ extra_service_conf.setdefault('check_interval', [])
 
 extra_service_conf['check_interval'] = [
   ( 1440, [], ALL_HOSTS, ['Check_MK HW/SW Inventory$'], {'comment': u'Restrict HW/SW-Inventory to once a day'} ),
-  ( 5, ['eaps-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 5, ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 5, ['eaps-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 5, ['engaging-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 5, ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 5, ['engaging-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + extra_service_conf['check_interval']
 
 
 extra_host_conf.setdefault('notification_interval', [])
 
 extra_host_conf['notification_interval'] = [
-  ( 60, ['eaps-basic', ], ALL_HOSTS ),
-  ( 60, ['eaps-critical', ], ALL_HOSTS ),
-  ( 60, ['eaps-critical-24x7', ], ALL_HOSTS ),
+  ( 60, ['engaging-basic', ], ALL_HOSTS ),
+  ( 60, ['engaging-critical', ], ALL_HOSTS ),
+  ( 60, ['engaging-critical-24x7', ], ALL_HOSTS ),
 ] + extra_host_conf['notification_interval']
 
 
@@ -73,25 +73,33 @@ extra_host_conf['max_check_attempts'] = [
 extra_service_conf.setdefault('notification_period', [])
 
 extra_service_conf['notification_period'] = [
-  ( 'allday', ['eaps-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'allday', ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'allday', [], ['eaps-critical-24x7'], ALL_SERVICES ),
+  ( 'allday', ['engaging-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'allday', ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'allday', [], ['engaging-critical-24x7'], ALL_SERVICES ),
 ] + extra_service_conf['notification_period']
+
+
+checkgroup_parameters.setdefault('filesystem', [])
+
+#checkgroup_parameters['filesystem'] = [
+#  ( {'levels': (75.0, 95.0)}, [], ALL_HOSTS, [u'/pool002'] ),
+#  ( {'levels': (95.0, 96.0)}, [], ALL_HOSTS, ALL_SERVICES ),
+#] + checkgroup_parameters['filesystem']
 
 
 active_checks.setdefault('ssh', [])
 
 active_checks['ssh'] = [
-  ( {}, ['tcp', ], ALL_HOSTS ),
+  ( {'timeout': 120}, [], ALL_HOSTS ),
 ] + active_checks['ssh']
 
 
 extra_service_conf.setdefault('notification_interval', [])
 
 extra_service_conf['notification_interval'] = [
-  ( 60, ['eaps-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 60, ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 60, ['eaps-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 60, ['engaging-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 60, ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 60, ['engaging-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + extra_service_conf['notification_interval']
 
 
@@ -108,18 +116,18 @@ extra_service_conf['retry_interval'] = [
 
 
 service_contactgroups = [
-  ( 'eaps-admins', ['eaps-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'eaps-admins', ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'eaps-admins', ['eaps-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'eaps-pager', ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'eaps-pager', ['eaps-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-admins', ['engaging-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-admins', ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-admins', ['engaging-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-pager', ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-pager', ['engaging-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + service_contactgroups
 
 
 service_groups = [
-  ( 'eaps-critical-24x7', ['eaps-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'eaps-basic', ['eaps-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'eaps-critical', ['eaps-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-critical-24x7', ['engaging-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-basic', ['engaging-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'engaging-critical', ['engaging-critical', ], ALL_HOSTS, ALL_SERVICES ),
 ] + service_groups
 
 
@@ -144,24 +152,24 @@ only_hosts = [
 
 
 host_groups = [
-  ( 'eaps-basic', ['eaps-basic', ], ALL_HOSTS ),
-  ( 'eaps-critical', ['eaps-critical', ], ALL_HOSTS ),
-  ( 'eaps-critical-24x7', ['eaps-critical-24x7', ], ALL_HOSTS ),
+  ( 'engaging-basic', ['engaging-basic', ], ALL_HOSTS ),
+  ( 'engaging-critical', ['engaging-critical', ], ALL_HOSTS ),
+  ( 'engaging-critical-24x7', ['engaging-critical-24x7', ], ALL_HOSTS ),
 ] + host_groups
 
 
 extra_host_conf.setdefault('notification_period', [])
 
 extra_host_conf['notification_period'] = [
-  ( 'allday', ['eaps-basic', ], ALL_HOSTS ),
-  ( 'allday', ['eaps-critical', ], ALL_HOSTS ),
-  ( 'allday', ['eaps-critical-24x7', ], ALL_HOSTS ),
+  ( 'allday', ['engaging-basic', ], ALL_HOSTS ),
+  ( 'allday', ['engaging-critical', ], ALL_HOSTS ),
+  ( 'allday', ['engaging-critical-24x7', ], ALL_HOSTS ),
 ] + extra_host_conf['notification_period']
 
 
 extra_host_conf.setdefault('retry_interval', [])
 
 extra_host_conf['retry_interval'] = [
-  ( 1, [], ALL_HOSTS ),
+  ( 4.0, [], ALL_HOSTS ),
 ] + extra_host_conf['retry_interval']
 

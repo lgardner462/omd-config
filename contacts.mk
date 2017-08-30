@@ -1,15 +1,18 @@
+# Written by Multisite UserDB
+# encoding: utf-8
+
 contacts.update(
-{'eaps-admin': {'alias': u'eaps-admin',
-                    'contactgroups': ['eaps-admins'],
+{'engaging-admin': {'alias': u'engaging-admin',
+                    'contactgroups': ['engaging-admins'],
                     'disable_notifications': False,
-                    'email': 'eaps-noc@techsquare.com',
+                    'email': 'engaging-noc@techsquare.com',
                     'pager': ''},
- 'eaps-pager': {'alias': u'eaps-pager',
-                    'contactgroups': ['eaps-pager'],
+ 'engaging-pager': {'alias': u'engaging-pager',
+                    'contactgroups': ['engaging-pager'],
                     'disable_notifications': False,
-                    'email': 'eaps-page@techsquare.com',
+                    'email': 'engaging-page@techsquare.com',
                     'pager': ''},
- 'eaps-view': {'alias': u'eaps view',
+ 'engaging-view': {'alias': u'engaging view',
                    'contactgroups': [],
                    'disable_notifications': False,
                    'email': '',
@@ -23,4 +26,3 @@ contacts.update(
               'email': '',
               'pager': ''}}
 )
-
