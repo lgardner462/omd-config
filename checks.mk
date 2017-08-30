@@ -3,7 +3,7 @@ checks = [
 ( ['tcp'], "cpu.threads" , None, (5000,7000) ),
 ]
 
-# this should to in an eaps specfic file
+# this should to in an tsstuff specfic file
 ignored_services += [
 
 # These are autofs mounts and we shouldn't monitor them
@@ -11,9 +11,7 @@ ignored_services += [
 # use name here
 # ( [ 'testhost','node017' ], ['Postfix Queue' ]),
 ( 'ALL_HOSTS' , ['Postfix Queue' ]),
-( 'badu.mit.edu', ['Input Tray 1$']),
 ]
-
 
 inventory_df_exclude_fs += [
 
