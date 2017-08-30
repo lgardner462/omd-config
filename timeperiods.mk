@@ -1,14 +1,14 @@
 # Written by WATO
 # encoding: utf-8
 
-timeperiods.update({'allday': {'alias': u'all day every day',
-            'friday': [('00:00', '24:00')],
-            'monday': [('00:00', '24:00')],
-            'saturday': [('00:00', '24:00')],
-            'sunday': [('00:00', '24:00')],
-            'thursday': [('00:00', '24:00')],
-            'tuesday': [('00:00', '24:00')],
-            'wednesday': [('00:00', '24:00')]},
+timeperiods.update({'twentyfourseven': {'alias': u'all day every day',
+          'friday': [('00:00', '24:00')],
+          'monday': [('00:00', '24:00')],
+          'saturday': [('00:00', '24:00')],
+          'sunday': [('00:00', '24:00')],
+          'thursday': [('00:00', '24:00')],
+          'tuesday': [('00:00', '24:00')],
+          'wednesday': [('00:00', '24:00')]},
  'overnight': {'alias': u'overnight',
                'friday': [('00:00', '09:00'), ('17:00', '23:59')],
                'monday': [('00:00', '09:00'), ('17:00', '23:59')],
@@ -17,6 +17,7 @@ timeperiods.update({'allday': {'alias': u'all day every day',
                'thursday': [('00:00', '09:00'), ('17:00', '23:59')],
                'tuesday': [('00:00', '09:00'), ('17:00', '23:59')],
                'wednesday': [('00:00', '09:00'), ('17:00', '23:59')]},
+
  'workhours': {'alias': u'workhours',
                'friday': [('09:00', '17:00')],
                'monday': [('09:00', '17:00')],
@@ -25,4 +26,3 @@ timeperiods.update({'allday': {'alias': u'all day every day',
                'thursday': [('09:00', '17:00')],
                'tuesday': [('09:00', '17:00')],
                'wednesday': [('09:00', '17:00')]}})
-
