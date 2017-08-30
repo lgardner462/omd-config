@@ -6,9 +6,9 @@ extra_service_conf.setdefault('_ec_sl', [])
 
 extra_service_conf['_ec_sl'] = [
   ( 10, [], ALL_HOSTS, ['Check_MK$'] ),
-  ( 10, ['neuro-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 20, ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 30, ['neuro-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 10, ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 20, ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 30, ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + extra_service_conf['_ec_sl']
 
 
@@ -22,44 +22,44 @@ active_checks['icmp'] = [
 extra_host_conf.setdefault('check_interval', [])
 
 extra_host_conf['check_interval'] = [
-  ( 5, ['neuro-basic', ], ALL_HOSTS ),
-  ( 5, ['neuro-critical', ], ALL_HOSTS ),
-  ( 5, ['neuro-critical-24x7', ], ALL_HOSTS ),
+  ( 5, ['tsstuff-basic', ], ALL_HOSTS ),
+  ( 5, ['tsstuff-critical', ], ALL_HOSTS ),
+  ( 5, ['tsstuff-critical-24x7', ], ALL_HOSTS ),
 ] + extra_host_conf['check_interval']
 
 
 host_contactgroups = [
-  ( 'neuro-admins', ['neuro-basic', ], ALL_HOSTS ),
-  ( 'neuro-admins', ['neuro-critical', ], ALL_HOSTS ),
-  ( 'neuro-admins', ['neuro-critical-24x7', ], ALL_HOSTS ),
-  ( 'neuro-pager', ['neuro-critical', ], ALL_HOSTS ),
-  ( 'neuro-pager', ['neuro-critical-24x7', ], ALL_HOSTS ),
+  ( 'tsstuff-admins', ['tsstuff-basic', ], ALL_HOSTS ),
+  ( 'tsstuff-admins', ['tsstuff-critical', ], ALL_HOSTS ),
+  ( 'tsstuff-admins', ['tsstuff-critical-24x7', ], ALL_HOSTS ),
+  ( 'tsstuff-pager', ['tsstuff-critical', ], ALL_HOSTS ),
+  ( 'tsstuff-pager', ['tsstuff-critical-24x7', ], ALL_HOSTS ),
 ] + host_contactgroups
 
 
-active_checks.setdefault('http', [])
-
-active_checks['http'] = [
-  ( (u'http-alive', {'uri': '/custom'}), [], ['service001'] ),
-] + active_checks['http']
+#active_checks.setdefault('http', [])
+#
+#active_checks['http'] = [
+#  ( (u'http-alive', {'uri': '/custom'}), [], ['service001'] ),
+#] + active_checks['http']
 
 
 extra_service_conf.setdefault('check_interval', [])
 
 extra_service_conf['check_interval'] = [
   ( 1440, [], ALL_HOSTS, ['Check_MK HW/SW Inventory$'], {'comment': u'Restrict HW/SW-Inventory to once a day'} ),
-  ( 5, ['neuro-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 5, ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 5, ['neuro-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 5, ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 5, ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 5, ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + extra_service_conf['check_interval']
 
 
 extra_host_conf.setdefault('notification_interval', [])
 
 extra_host_conf['notification_interval'] = [
-  ( 60, ['neuro-basic', ], ALL_HOSTS ),
-  ( 60, ['neuro-critical', ], ALL_HOSTS ),
-  ( 60, ['neuro-critical-24x7', ], ALL_HOSTS ),
+  ( 60, ['tsstuff-basic', ], ALL_HOSTS ),
+  ( 60, ['tsstuff-critical', ], ALL_HOSTS ),
+  ( 60, ['tsstuff-critical-24x7', ], ALL_HOSTS ),
 ] + extra_host_conf['notification_interval']
 
 
@@ -80,9 +80,9 @@ extra_host_conf['max_check_attempts'] = [
 extra_service_conf.setdefault('notification_period', [])
 
 extra_service_conf['notification_period'] = [
-  ( '24x7', ['neuro-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( '24x7', ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( '24x7', [], ['neuro-critical-24x7'], ALL_SERVICES ),
+  ( '24x7', ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( '24x7', ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( '24x7', [], ['tsstuff-critical-24x7'], ALL_SERVICES ),
 ] + extra_service_conf['notification_period']
 
 
@@ -96,9 +96,9 @@ active_checks['ssh'] = [
 extra_service_conf.setdefault('notification_interval', [])
 
 extra_service_conf['notification_interval'] = [
-  ( 60, ['neuro-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 60, ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 60, ['neuro-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 60, ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 60, ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 60, ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + extra_service_conf['notification_interval']
 
 
@@ -115,18 +115,18 @@ extra_service_conf['retry_interval'] = [
 
 
 service_contactgroups = [
-  ( 'neuro-admins', ['neuro-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'neuro-admins', ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'neuro-admins', ['neuro-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'neuro-pager', ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'neuro-pager', ['neuro-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-admins', ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-admins', ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-admins', ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-pager', ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-pager', ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
 ] + service_contactgroups
 
 
 service_groups = [
-  ( 'neuro-critical-24x7', ['neuro-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'neuro-basic', ['neuro-basic', ], ALL_HOSTS, ALL_SERVICES ),
-  ( 'neuro-critical', ['neuro-critical', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-critical-24x7', ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-basic', ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 'tsstuff-critical', ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
 ] + service_groups
 
 
@@ -151,18 +151,18 @@ only_hosts = [
 
 
 host_groups = [
-  ( 'neuro-basic', ['neuro-basic', ], ALL_HOSTS ),
-  ( 'neuro-critical', ['neuro-critical', ], ALL_HOSTS ),
-  ( 'neuro-critical-24x7', ['neuro-critical-24x7', ], ALL_HOSTS ),
+  ( 'tsstuff-basic', ['tsstuff-basic', ], ALL_HOSTS ),
+  ( 'tsstuff-critical', ['tsstuff-critical', ], ALL_HOSTS ),
+  ( 'tsstuff-critical-24x7', ['tsstuff-critical-24x7', ], ALL_HOSTS ),
 ] + host_groups
 
 
 extra_host_conf.setdefault('notification_period', [])
 
 extra_host_conf['notification_period'] = [
-  ( '24x7', ['neuro-basic', ], ALL_HOSTS ),
-  ( '24x7', ['neuro-critical', ], ALL_HOSTS ),
-  ( '24x7', ['neuro-critical-24x7', ], ALL_HOSTS ),
+  ( '24x7', ['tsstuff-basic', ], ALL_HOSTS ),
+  ( '24x7', ['tsstuff-critical', ], ALL_HOSTS ),
+  ( '24x7', ['tsstuff-critical-24x7', ], ALL_HOSTS ),
 ] + extra_host_conf['notification_period']
 
 
