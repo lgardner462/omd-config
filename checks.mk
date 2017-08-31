@@ -5,15 +5,12 @@ checks = [
 tcp_connect_timeout = 120.0
 
 ignored_services += [
-
-# These are autofs mounts and we shouldn't monitor them
-# ( ALL_HOSTS, [ 'NFS mount /run/*' ] ),
-# use name here
 ( ALL_HOSTS, ['Postfix Queue' ]),
 ( ["ping-only"], ALL_HOSTS, "Number of Threads" ),
-( ["tsstuff-printer"], ALL_HOSTS "Number of Threads" ),
 ( ["ping-only"], ALL_HOSTS, "Check_MK"),
 ]
+
+tcp_connect_timeout = 120.0
 
 inventory_df_exclude_fs += [
 
