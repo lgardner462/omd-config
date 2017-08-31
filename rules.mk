@@ -5,11 +5,18 @@
 extra_service_conf.setdefault('_ec_sl', [])
 
 extra_service_conf['_ec_sl'] = [
-  ( 10, [], ALL_HOSTS, ['Check_MK$'] ),
   ( 10, ['tsstuff-basic', ], ALL_HOSTS, ALL_SERVICES ),
   ( 20, ['tsstuff-critical', ], ALL_HOSTS, ALL_SERVICES ),
   ( 30, ['tsstuff-critical-24x7', ], ALL_HOSTS, ALL_SERVICES ),
+  ( 10, [], ALL_HOSTS, ['Check_MK$'] ),
 ] + extra_service_conf['_ec_sl']
+
+checkgroup_parameters.setdefault('filesystem', [])
+
+checkgroup_parameters['filesystem'] = [
+  ( {'levels': [(1, (-10.0, -5.0)), (1099511627776, (-5.0, -1.0)), (5497558138880, (-2.0, -1.0))]}, [], ALL_HOSTS, ALL_SERVICES ),
+] + checkgroup_parameters['filesystem']
+
 
 
 active_checks.setdefault('icmp', [])
