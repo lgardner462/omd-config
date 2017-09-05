@@ -4,6 +4,9 @@ basic
 critical
 critical24x7
 printer
+<<<<<<< HEAD
 git_update.sh
+=======
+>>>>>>> 9fd79441a6711f97c23cca7c3a5a014e93ffaf1e
 git_pull.sh
 git_push.sh
