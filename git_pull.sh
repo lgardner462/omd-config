@@ -1,7 +1,7 @@
 #!/bin/bash
 
-su - $OMD_SITE
-cd /omd/sites/$OMD_SITE/etc/check_mk/conf.d/wato
+su - eaps
+cd /omd/sites/eaps/etc/check_mk/conf.d/wato
 git pull origin master
-git-sed -f g tsstuff $(whoami)
+git-sed -f g eaps $(whoami)
 
