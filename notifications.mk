@@ -16,8 +16,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff ACK alert: $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
  {'allow_disable': True,
   'comment': u'basic host first two emails (sched downtime) \n',
   'contact_all': False,
@@ -54,8 +52,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff FLAPPING alert: $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
  {'allow_disable': True,
   'comment': u'basic host first two emails (recovery) \n',
   'contact_all': False,
@@ -74,7 +70,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert: $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'basic host first two emails (problem) \n',
   'contact_all': False,
@@ -84,7 +79,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'basic host first 2 emails, one per hour (problem)',
   'disabled': False,
   'match_escalation': (1, 2),
-  'match_host_event': ['rd', 'ru', 'du','ud'],
+  'match_host_event': ['rd', 'ru', 'du', 'ud'],
   'match_hostgroups': ['tsstuff-basic'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -93,9 +88,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff PROBLEM alert: $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
  {'allow_disable': True,
   'comment': u'basic host escalation emails,send daily (ack)\n',
   'contact_all': False,
@@ -132,7 +124,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff scheduled downtime:$HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'basic host escalation emails,send daily (flap) \n',
   'contact_all': False,
@@ -187,10 +178,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert:$HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
  {'allow_disable': True,
   'comment': u'sends critical email overnight (no page) from the second notification at regular one hour intervals\n (ack)',
   'contact_all': False,
@@ -229,9 +216,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff FLAPPING alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
  {'allow_disable': True,
   'comment': u'sends critical email overnight (no page) from the second notification at regular one hour intervals (sched downtime)\n',
   'contact_all': False,
@@ -251,7 +235,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff scheduled downtime:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'sends critical email overnight (no page) from the second notification at regular one hour intervals (problem) \n',
   'contact_all': False,
@@ -261,7 +244,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical email overnights no page (problem)',
   'disabled': False,
   'match_escalation': (1, 99999),
-  'match_host_event': ['rd', 'ru','ud', 'ur'],
+  'match_host_event': ['rd', 'ru', 'ud', 'ur'],
   'match_hostgroups': ['tsstuff-critical'],
   'match_timeperiod': 'overnight',
   'notify_plugin': ('asciimail',
@@ -271,8 +254,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff PROBLEM alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
  {'allow_disable': True,
   'comment': u'sends critical email overnight (no page) from the second notification at regular one hour intervals (recovery) \n',
   'contact_all': False,
@@ -282,7 +263,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical email overnights no page (recovery)',
   'disabled': False,
   'match_escalation': (1, 99999),
-  'match_host_event': ['dr','ur'],
+  'match_host_event': ['dr', 'ur'],
   'match_hostgroups': ['tsstuff-critical'],
   'match_timeperiod': 'overnight',
   'notify_plugin': ('asciimail',
@@ -292,19 +273,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'sends workhours email from the second notification at regular one hour intervals (flapping) \n',
   'contact_all': False,
@@ -324,7 +292,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff FLAPPING alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'sends workhours email from the second notification at regular one hour intervals (sched downtime) \n',
   'contact_all': False,
@@ -372,7 +339,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical send email first workhours email, no page (problem)',
   'disabled': False,
   'match_escalation': (1, 1),
-  'match_host_event': ['rd','ru', 'du', 'ud'],
+  'match_host_event': ['rd', 'ru', 'du', 'ud'],
   'match_hostgroups': ['tsstuff-critical'],
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -382,11 +349,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff PROBLEM alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'do not escalate for ack\n',
   'contact_all': False,
@@ -425,8 +387,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
  {'allow_disable': True,
   'comment': u'critical host escalation page, hourly after second notification, checks first page to ensure no escalation into OK state\n',
   'contact_all': False,
@@ -484,18 +444,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff scheuled downtime:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical host escalation page, hourly after second notification (ack) \n',
   'contact_all': False,
@@ -572,7 +520,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff PROBLEM alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'critical host escalation page, hourly after second notification (recovery) \n',
   'contact_all': False,
@@ -582,7 +529,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical pager 2+ (recovery)',
   'disabled': False,
   'match_escalation': (3, 9999),
-  'match_host_event': ['dr','ur'],
+  'match_host_event': ['dr', 'ur'],
   'match_hostgroups': ['tsstuff-critical'],
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -592,15 +539,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical host 24x7 escalation email (ack)\n',
   'contact_all': False,
@@ -637,7 +575,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff scheduled downtime:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'critical host 24x7 escalation email (flap)\n',
   'contact_all': False,
@@ -656,7 +593,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff FLAPPING alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'critical host 24x7 escalation email (problem)\n',
   'contact_all': False,
@@ -666,7 +602,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical 24x7 send first email (problem)',
   'disabled': False,
   'match_escalation': (1, 1),
-  'match_host_event': ['ru','rd','du','ud'],
+  'match_host_event': ['ru', 'rd', 'du', 'ud'],
   'match_hostgroups': ['tsstuff-critical-24x7'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -675,7 +611,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff PROBLEM alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
  {'allow_disable': True,
   'comment': u'critical host 24x7 escalation email (RECOVERY)\n',
   'contact_all': False,
@@ -685,7 +620,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical 24x7 send first email (recovery)',
   'disabled': False,
   'match_escalation': (1, 1),
-  'match_host_event': ['dr','ur'],
+  'match_host_event': ['dr', 'ur'],
   'match_hostgroups': ['tsstuff-critical-24x7'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -694,12 +629,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical247 host escalation page, checks first page so as not to escalate to OK (recovery)\n',
   'contact_all': False,
@@ -709,7 +638,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical 24x7 pager, do not escalate to page for (recovery)',
   'disabled': False,
   'match_escalation': (2, 2),
-  'match_host_event': ['dr','ur'],
+  'match_host_event': ['dr', 'ur'],
   'match_hostgroups': ['tsstuff-critical-24x7'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -745,7 +674,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical 24x7 pager, first page (problem)',
   'disabled': False,
   'match_escalation': (2, 2),
-  'match_host_event': ['ru','rd','ud','du'],
+  'match_host_event': ['ru', 'rd', 'ud', 'du'],
   'match_hostgroups': ['tsstuff-critical-24x7'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -790,11 +719,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff sched downtime:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical247 host escalation page 2+ (ack)\n',
   'contact_all': False,
@@ -858,7 +782,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical 24x7 page 2+ (problem)',
   'disabled': False,
   'match_escalation': (3, 9999),
-  'match_host_event': ['du','ud','ru','rd'],
+  'match_host_event': ['du', 'ud', 'ru', 'rd'],
   'match_hostgroups': ['tsstuff-critical-24x7'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -876,7 +800,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'host critical 24x7 page 2+ (RECOVERY)',
   'disabled': False,
   'match_escalation': (3, 9999),
-  'match_host_event': ['dr','ur'],
+  'match_host_event': ['dr', 'ur'],
   'match_hostgroups': ['tsstuff-critical-24x7'],
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -885,15 +809,6 @@ notification_rules += [{'allow_disable': True,
                      'host_subject': u'tsstuff RECOVERY alert:  $HOSTNAME$ - $EVENT_TXT$',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n'})},
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'basic service escalation email (ack)\n',
   'contact_all': False,
@@ -903,7 +818,6 @@ notification_rules += [{'allow_disable': True,
   'description': u'basic service send first two emails (ack)',
   'disabled': False,
   'match_escalation': (1, 2),
-  'match_hostgroups': ['tcp'],
   'match_service_event': ['x'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
@@ -922,7 +836,6 @@ notification_rules += [{'allow_disable': True,
   'description': u'basic service send first two emails (flap',
   'disabled': False,
   'match_escalation': (1, 2),
-  'match_hostgroups': ['tcp'],
   'match_service_event': ['f'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
@@ -941,7 +854,6 @@ notification_rules += [{'allow_disable': True,
   'description': u'basic service send first two emails (sched)',
   'disabled': False,
   'match_escalation': (1, 2),
-  'match_hostgroups': ['tcp'],
   'match_service_event': ['s'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
@@ -960,8 +872,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'basic service send first two emails (problem)',
   'disabled': False,
   'match_escalation': (1, 2),
-  'match_hostgroups': ['tcp'],
-  'match_service_event': ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -979,8 +890,7 @@ notification_rules += [{'allow_disable': True,
   'description': u'basic service send first two emails (recovery)',
   'disabled': False,
   'match_escalation': (1, 2),
-  'match_hostgroups': ['tcp'],
-  'match_service_event': ['ur','cr','wr'],
+  'match_service_event': ['ur', 'cr', 'wr'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -989,15 +899,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert:  $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'basic service escalation email (ack) \n',
   'contact_all': False,
@@ -1008,7 +909,6 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 999999),
   'match_escalation_throttle': (1, 24),
-  'match_hostgroups': ['tcp'],
   'match_service_event': ['x'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
@@ -1028,7 +928,6 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 999999),
   'match_escalation_throttle': (1, 24),
-  'match_hostgroups': ['tcp'],
   'match_service_event': ['s'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
@@ -1048,7 +947,6 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 999999),
   'match_escalation_throttle': (1, 24),
-  'match_hostgroups': ['tcp'],
   'match_service_event': ['f'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
@@ -1068,8 +966,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 999999),
   'match_escalation_throttle': (1, 24),
-  'match_hostgroups': ['tcp'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'cu', 'uw'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1088,8 +985,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 999999),
   'match_escalation_throttle': (1, 24),
-  'match_hostgroups': ['tcp'],
-  'match_service_event': ['ur','wr','cr'],
+  'match_service_event': ['ur', 'wr', 'cr'],
   'match_sl': (10, 10),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1098,22 +994,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical service escalation email, dont page at night (ack) \n',
   'contact_all': False,
@@ -1153,8 +1033,7 @@ notification_rules += [{'allow_disable': True,
                      'host_body': u'Event:    $EVENT_TXT$\nOutput:   $HOSTOUTPUT$\nPerfdata: $HOSTPERFDATA$\n$LONGHOSTOUTPUT$\n',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
-                     'service_subject': u'tsstuff scheduled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})}, 
-
+                     'service_subject': u'tsstuff scheduled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
  {'allow_disable': True,
   'comment': u'critical service escalation email, dont page at night (flap) \n',
   'contact_all': False,
@@ -1175,7 +1054,7 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-  {'allow_disable': True,
+ {'allow_disable': True,
   'comment': u'critical service escalation email, dont page at night (problem) \n',
   'contact_all': False,
   'contact_all_with_email': False,
@@ -1185,7 +1064,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (1, 99999),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (20, 20),
   'match_timeperiod': 'overnight',
   'notify_plugin': ('asciimail',
@@ -1194,8 +1073,8 @@ notification_rules += [{'allow_disable': True,
                      'host_body': u'Event:    $EVENT_TXT$\nOutput:   $HOSTOUTPUT$\nPerfdata: $HOSTPERFDATA$\n$LONGHOSTOUTPUT$\n',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
-                     'service_subject': u'tsstuff problem alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})}, 
-{'allow_disable': True,
+                     'service_subject': u'tsstuff problem alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
+ {'allow_disable': True,
   'comment': u'critical service escalation email, dont page at night (recovery) \n',
   'contact_all': False,
   'contact_all_with_email': False,
@@ -1205,7 +1084,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (1, 99999),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event': ['cr','wr','ur'],
+  'match_service_event': ['cr', 'wr', 'ur'],
   'match_sl': (20, 20),
   'match_timeperiod': 'overnight',
   'notify_plugin': ('asciimail',
@@ -1215,21 +1094,8 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
-  'comment': u"Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n",
+  'comment': u'Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-admins'],
@@ -1249,7 +1115,7 @@ notification_rules += [{'allow_disable': True,
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff ACK alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
  {'allow_disable': True,
-  'comment': u"Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n",
+  'comment': u'Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-admins'],
@@ -1269,7 +1135,7 @@ notification_rules += [{'allow_disable': True,
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff scheduled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
  {'allow_disable': True,
-  'comment': u"Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n",
+  'comment': u'Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-admins'],
@@ -1287,9 +1153,9 @@ notification_rules += [{'allow_disable': True,
                      'host_body': u'Event:    $EVENT_TXT$\nOutput:   $HOSTOUTPUT$\nPerfdata: $HOSTPERFDATA$\n$LONGHOSTOUTPUT$\n',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
-                     'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})}, 
-{'allow_disable': True,
-  'comment': u"Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n",
+                     'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
+ {'allow_disable': True,
+  'comment': u'Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-admins'],
@@ -1297,7 +1163,7 @@ notification_rules += [{'allow_disable': True,
   'description': u"Notification for crit/crit247 services that don't require page like USERCPU(problem)",
   'disabled': False,
   'match_escalation': (1, 99999),
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_services': [u'USERCPU'],
   'match_sl': (20, 30),
   'match_timeperiod': 'workhours',
@@ -1307,9 +1173,9 @@ notification_rules += [{'allow_disable': True,
                      'host_body': u'Event:    $EVENT_TXT$\nOutput:   $HOSTOUTPUT$\nPerfdata: $HOSTPERFDATA$\n$LONGHOSTOUTPUT$\n',
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
-                     'service_subject': u'tsstuff PROBLEM alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})}, 
-{'allow_disable': True,
-  'comment': u"Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n",
+                     'service_subject': u'tsstuff PROBLEM alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
+ {'allow_disable': True,
+  'comment': u'Notification for critical/24x7 services that we do not want a page for but once a day notifications are no good. e.g. USERCPU\n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-admins'],
@@ -1317,7 +1183,7 @@ notification_rules += [{'allow_disable': True,
   'description': u"Notification for crit/crit247 services that don't require page like USERCPU(RECOVERY)",
   'disabled': False,
   'match_escalation': (1, 99999),
-  'match_service_event': ['dr','ur'],
+  'match_service_event': ['dr', 'ur'],
   'match_services': [u'USERCPU'],
   'match_sl': (20, 30),
   'match_timeperiod': 'workhours',
@@ -1328,22 +1194,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical service escalation email\n',
   'contact_all': False,
@@ -1364,7 +1214,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff ACK alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical service escalation email\n',
   'contact_all': False,
@@ -1385,7 +1234,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff scheduled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical service escalation email\n',
   'contact_all': False,
@@ -1406,7 +1254,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical service escalation email\n',
   'contact_all': False,
@@ -1417,7 +1264,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (1, 1),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (20, 20),
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -1427,7 +1274,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff PROBLEM alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical service escalation email\n',
   'contact_all': False,
@@ -1438,7 +1284,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (1, 1),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event': ['ur','cr','wr'],
+  'match_service_event': ['ur', 'cr', 'wr'],
   'match_sl': (20, 20),
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -1448,23 +1294,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u"critical service hourly page, check state to ensure we don't escalate into a page for (recovery)\n",
   'contact_all': False,
@@ -1505,8 +1334,8 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff ACK alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-{'allow_disable': True,
-  'comment': u"critical service hourly page, first page (flap) \n",
+ {'allow_disable': True,
+  'comment': u'critical service hourly page, first page (flap) \n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-pager'],
@@ -1525,10 +1354,8 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-{'allow_disable': True,
-  'comment': u"critical service hourly page, first page (problem) \n",
+ {'allow_disable': True,
+  'comment': u'critical service hourly page, first page (problem) \n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-pager'],
@@ -1537,7 +1364,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (2, 2),
   'match_exclude_services': [u'Check_MK', u'USERCPU'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (20, 20),
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -1547,9 +1374,8 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff PROBLEM alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-{'allow_disable': True,
-  'comment': u"critical service hourly page, first page (sched) \n",
+ {'allow_disable': True,
+  'comment': u'critical service hourly page, first page (sched) \n',
   'contact_all': False,
   'contact_all_with_email': False,
   'contact_groups': ['tsstuff-pager'],
@@ -1568,15 +1394,7 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff scheuled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-{'allow_disable': True,
+ {'allow_disable': True,
   'comment': u'critical service hourly page (ack)\n',
   'contact_all': False,
   'contact_all_with_email': False,
@@ -1596,8 +1414,7 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff ACK alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-{'allow_disable': True,
+ {'allow_disable': True,
   'comment': u'critical service hourly page (flap)\n',
   'contact_all': False,
   'contact_all_with_email': False,
@@ -1617,7 +1434,7 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-{'allow_disable': True,
+ {'allow_disable': True,
   'comment': u'critical service hourly page (sched)\n',
   'contact_all': False,
   'contact_all_with_email': False,
@@ -1637,8 +1454,7 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff scheduled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-{'allow_disable': True,
+ {'allow_disable': True,
   'comment': u'critical service hourly page (recovery)\n',
   'contact_all': False,
   'contact_all_with_email': False,
@@ -1648,7 +1464,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 9999),
   'match_exclude_services': [u'Check_MK', u'USERCPU'],
-  'match_service_event': ['cr','ur','wr'],
+  'match_service_event': ['cr', 'ur', 'wr'],
   'match_sl': (20, 20),
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -1658,7 +1474,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical service hourly page (problem)\n',
   'contact_all': False,
@@ -1669,7 +1484,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 9999),
   'match_exclude_services': [u'Check_MK', u'USERCPU'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (20, 20),
   'match_timeperiod': 'workhours',
   'notify_plugin': ('asciimail',
@@ -1679,21 +1494,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff PROBLEM alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service first email (ack) \n',
   'contact_all': False,
@@ -1713,7 +1513,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff ACK alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service first email (sched) \n',
   'contact_all': False,
@@ -1762,7 +1561,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (1, 1),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (30, 30),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1781,7 +1580,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (1, 1),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event': ['ur','cr','wr'],
+  'match_service_event': ['ur', 'cr', 'wr'],
   'match_sl': (30, 30),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1790,14 +1589,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service pager, make sure first page isnt (ack)\n',
   'contact_all': False,
@@ -1827,7 +1618,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (2, 2),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event': ['wr','cr','ur'],
+  'match_service_event': ['wr', 'cr', 'ur'],
   'match_sl': (30, 30),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1884,7 +1675,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (2, 2),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (30, 30),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1893,14 +1684,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff ACK alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service pager, sends once hourly after second notification (ack) \n',
   'contact_all': False,
@@ -1939,7 +1722,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff scheduled downtime: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service pager, sends once hourly after second notification (flap) \n',
   'contact_all': False,
@@ -1959,7 +1741,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff FLAPPING alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service pager, sends once hourly after second notification (problem) \n',
   'contact_all': False,
@@ -1970,7 +1751,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 9999),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event':  ['rw','rc','ru','wc','wu','cw','uw','cu'],
+  'match_service_event': ['rw', 'rc', 'ru', 'wc', 'wu', 'cw', 'uw', 'cu'],
   'match_sl': (30, 30),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1979,7 +1760,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff PROBLEM alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
  {'allow_disable': True,
   'comment': u'critical 24x7 service pager, sends once hourly after second notification (recovery) \n',
   'contact_all': False,
@@ -1990,7 +1770,7 @@ notification_rules += [{'allow_disable': True,
   'disabled': False,
   'match_escalation': (3, 9999),
   'match_exclude_services': [u'Check_MK'],
-  'match_service_event': ['ur','cr','wr'],
+  'match_service_event': ['ur', 'cr', 'wr'],
   'match_sl': (30, 30),
   'notify_plugin': ('asciimail',
                     {'common_body': u'Host:     $HOSTNAME$\n',
@@ -1999,17 +1779,6 @@ notification_rules += [{'allow_disable': True,
                      'reply_to': 'tsstuff-noc@techsquare.com',
                      'service_body': u'Service:  $SERVICEDESC$\nEvent:    $EVENT_TXT$\nOutput:   $SERVICEOUTPUT$\nPerfdata: $SERVICEPERFDATA$\n$LONGSERVICEOUTPUT$\n',
                      'service_subject': u'tsstuff RECOVERY alert: $HOSTNAME$/$SERVICEDESC$ $EVENT_TXT$'})},
-
-
-
-
-
-
-
-
-
-
-
  {'allow_disable': True,
   'comment': u'',
   'contact_all': False,
