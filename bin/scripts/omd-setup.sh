@@ -49,6 +49,7 @@ yum install -y bind-utils
 
 yum install -y mailx
 
+yum install -y git-tools
 #wget https://labs.consol.de/repo/stable/rhel7/x86_64/omd-1.30.rhel7.x86_64.rpm 
 
 yum --nogpgcheck localinstall -y ../rpms/omd-1.30.rhel7.x86_64.rpm 
@@ -56,6 +57,8 @@ yum --nogpgcheck localinstall -y ../rpms/omd-1.30.rhel7.x86_64.rpm
 cp /usr/lib64/python2.7/hashlib.py /omd/versions/1.30/lib/python/hashlib.py
 
 #########add  https://monitoring-portal.org/index.php?thread/34786-hashlib-problem-rhel-7-2-maipo-oel-7-2/ to comments for the hashlib issue
+
+
 
 setenforce 0
 
