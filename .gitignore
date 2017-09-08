@@ -4,7 +4,7 @@ basic
 critical
 critical24x7
 printer
-git_update.sh
 git_pull.sh
 git_push.sh
-
+bin
+README.md
