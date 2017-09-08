@@ -10,7 +10,7 @@ show_help () {
     echo '-x for critical 24x7 host <hostname>'
     echo '-n to not reload after adding host'
     echo '-r for printer (doesn't need criticality flag)'
-    echo 'adduser.sh -b testhost -w neuro -s nodes' 
+    echo 'adduser.sh -b testhost -w tsstuff -s nodes' 
     exit
 }
 
