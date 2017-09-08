@@ -39,7 +39,7 @@ fi
 
 
 if [[ $EUID -ne 0 ]];then
-    echo "OMD setup script must be run as root user"
+    echo "OMD setup script must be run as tsstuff user"
     exit 1
 fi
 
@@ -49,7 +49,7 @@ yum install -y bind-utils
 
 yum install -y mailx
 
-yum install -y git-tools
+yum install -y git-extras
 #wget https://labs.consol.de/repo/stable/rhel7/x86_64/omd-1.30.rhel7.x86_64.rpm 
 
 yum --nogpgcheck localinstall -y ../rpms/omd-1.30.rhel7.x86_64.rpm 
